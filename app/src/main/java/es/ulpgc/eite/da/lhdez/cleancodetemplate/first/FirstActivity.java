@@ -15,9 +15,11 @@ import es.ulpgc.eite.da.lhdez.cleancodetemplate.second.SecondActivity;
 public class FirstActivity
     extends AppCompatActivity implements FirstContract.View {
 
+
   public static String TAG = FirstActivity.class.getSimpleName();
 
   private FirstContract.Presenter presenter;
+
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,7 @@ public class FirstActivity
     }
   }
 
+
   @Override
   protected void onResume() {
     super.onResume();
@@ -46,6 +49,7 @@ public class FirstActivity
     // load the data
     presenter.onResume();
   }
+
 
   @Override
   public void onBackPressed() {

@@ -76,7 +76,6 @@ public class FirstPresenter implements FirstContract.Presenter {
 
     // update the view
     view.get().onDataUpdated(state);
-
   }
 
   @Override

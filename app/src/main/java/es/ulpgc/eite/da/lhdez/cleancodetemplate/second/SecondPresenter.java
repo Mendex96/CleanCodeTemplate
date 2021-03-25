@@ -35,6 +35,7 @@ public class SecondPresenter implements SecondContract.Presenter {
 
     // use passed state if is necessary
     FirstToSecondState savedState = getStateFromPreviousScreen();
+
     if (savedState != null) {
 
       // update the model if is necessary
