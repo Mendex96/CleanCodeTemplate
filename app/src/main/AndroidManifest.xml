@@ -10,15 +10,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CleanCodeTemplate">
 
-        <activity android:name=".first.FirstActivity">
+        <activity
+            android:name=".first.FirstActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".second.SecondActivity"/>
+        <activity
+            android:name=".second.SecondActivity"
+            android:exported="true">
+
+        </activity>
+
     </application>
 
 </manifest>

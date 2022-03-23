@@ -3,18 +3,18 @@ package es.ulpgc.eite.da.lhdez.cleancodetemplate.second;
 import java.lang.ref.WeakReference;
 
 /**
- * Created by Luis on March, 2021
+ * Created by Luis on marzo, 2022
  */
 public interface SecondContract {
 
   interface View {
     void injectPresenter(Presenter presenter);
 
-    void onDataUpdated(SecondViewModel viewModel);
+    void onViewModelDataUpdated(SecondViewModel viewModel);
 
-    void navigateToNextScreen();
+    //void navigateToNextScreen();
 
-    void finishScreen();
+    void navigateToPreviousScreen();
   }
 
   interface Presenter {
@@ -38,13 +38,15 @@ public interface SecondContract {
   }
 
   interface Model {
+    String getUpdatedData();
+
     String getStoredData();
 
-    void onDataFromNextScreen(String data);
+    void onUpdatedDataFromRestartedScreen(String data);
 
-    void onRestartScreen(String data);
+    void onUpdatedDataFromNextScreen(String data);
 
-    void onDataFromPreviousScreen(String data);
+    void onUpdatedDataFromPreviousScreen(String data);
   }
 
 }

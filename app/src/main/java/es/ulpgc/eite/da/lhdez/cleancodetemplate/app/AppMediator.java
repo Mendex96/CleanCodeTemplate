@@ -4,7 +4,7 @@ import es.ulpgc.eite.da.lhdez.cleancodetemplate.first.FirstState;
 import es.ulpgc.eite.da.lhdez.cleancodetemplate.second.SecondState;
 
 /**
- * Created by Luis on March, 2021
+ * Created by Luis on marzo, 2022
  */
 @SuppressWarnings("unused")
 public class AppMediator {
@@ -14,12 +14,14 @@ public class AppMediator {
   private FirstState mFirstState;
   private SecondState mSecondState;
 
-  private FirstToSecondState firstToSecondState;
-  private SecondToFirstState secondToFirstState;
+  private FirstToSecondState mFirstToSecondState;
+  private SecondToFirstState mSecondToFirstState;
 
   private AppMediator() {
-
+    mFirstState = new FirstState();
+    mSecondState = new SecondState();
   }
+
 
   public static AppMediator getInstance() {
     if (INSTANCE == null) {
@@ -34,42 +36,42 @@ public class AppMediator {
     INSTANCE = null;
   }
 
-  public FirstState getFirstState() {
+  public FirstState getFirstScreenState() {
     return mFirstState;
   }
 
-  public SecondState getSecondState() {
+  public void setFirstScreenState(FirstState state) {
+    mFirstState = state;
+  }
+
+  public SecondState getSecondScreenState() {
     return mSecondState;
   }
 
+  public void setSecondScreenState(SecondState state) {
+    mSecondState = state;
+  }
+
+
+  public void setNextFirstScreenState(FirstToSecondState state) {
+    mFirstToSecondState=state;
+  }
+
   public SecondToFirstState getNextFirstScreenState() {
-    SecondToFirstState state = secondToFirstState;
-    secondToFirstState=null;
+    SecondToFirstState state = mSecondToFirstState;
+    mSecondToFirstState=null;
     return state;
   }
 
-  public void setNextFirstScreenState(FirstToSecondState state) {
-    firstToSecondState = state;
-  }
 
   public void setPreviousSecondScreenState(SecondToFirstState state) {
-    secondToFirstState=state;
+    mSecondToFirstState=state;
   }
 
   public FirstToSecondState getPreviousSecondScreenState() {
-    FirstToSecondState state = firstToSecondState;
-    firstToSecondState=null;
+    FirstToSecondState state = mFirstToSecondState;
+    mFirstToSecondState=null;
     return state;
   }
-
-  /*
-  public void setPreviousFirstScreenState(FirstToPreviousState state) {
-
-  }
-
-  public PreviousToFirstState getPreviousFirstScreenState() {
-    return null;
-  }
-  */
 
 }

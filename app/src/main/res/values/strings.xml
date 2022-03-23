@@ -3,8 +3,12 @@
 
     <string name="first_screen_title">First Screen</string>
     <string name="second_screen_title">Second Screen</string>
-    <string name="second_button_label">First Screen</string>
+
     <string name="first_message_text">Hello World!</string>
     <string name="second_message_text">Bye World!</string>
-    <string name="first_button_label">Second Screen</string>
+    <string name="empty_message_text"></string>
+
+    <string name="second_button_label">Second Screen</string>
+    <string name="first_button_label">First Screen</string>
+
 </resources>

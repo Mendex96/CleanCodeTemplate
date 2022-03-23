@@ -3,16 +3,18 @@ package es.ulpgc.eite.da.lhdez.cleancodetemplate.first;
 import java.lang.ref.WeakReference;
 
 /**
- * Created by Luis on March, 2021
+ * Created by Luis on marzo, 2022
  */
 public interface FirstContract {
 
   interface View {
     void injectPresenter(Presenter presenter);
 
-    void onDataUpdated(FirstViewModel viewModel);
+    void onViewModelDataUpdated(FirstViewModel viewModel);
 
     void navigateToNextScreen();
+
+    //void navigateToPreviousScreen();
   }
 
   interface Presenter {
@@ -36,13 +38,15 @@ public interface FirstContract {
   }
 
   interface Model {
+    String getUpdatedData();
+
     String getStoredData();
 
-    void onDataFromNextScreen(String data);
+    void onUpdatedDataFromRestartedScreen(String data);
 
-    void onRestartScreen(String data);
+    void onUpdatedDataFromNextScreen(String data);
 
-    void onDataFromPreviousScreen(String data);
+    void onUpdatedDataFromPreviousScreen(String data);
   }
 
 }

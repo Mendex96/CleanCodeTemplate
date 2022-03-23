@@ -1,7 +1,7 @@
 package es.ulpgc.eite.da.lhdez.cleancodetemplate.first;
 
 /**
- * Created by Luis on March, 2021
+ * Created by Luis on marzo, 2022
  */
 public class FirstViewModel {
 

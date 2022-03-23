@@ -8,7 +8,7 @@ import es.ulpgc.eite.da.lhdez.cleancodetemplate.R;
 import es.ulpgc.eite.da.lhdez.cleancodetemplate.app.AppMediator;
 
 /**
- * Created by Luis on March, 2021
+ * Created by Luis on marzo, 2022
  */
 public class SecondScreen {
 
@@ -17,12 +17,13 @@ public class SecondScreen {
     WeakReference<FragmentActivity> context =
         new WeakReference<>((FragmentActivity) view);
 
-    String data = context.get().getString(R.string.second_message_text);
 
     AppMediator mediator = AppMediator.getInstance();
-
     SecondContract.Presenter presenter = new SecondPresenter(mediator);
+
+    String data = context.get().getString(R.string.second_message_text);
     SecondContract.Model model = new SecondModel(data);
+
     presenter.injectModel(model);
     presenter.injectView(new WeakReference<>(view));
 

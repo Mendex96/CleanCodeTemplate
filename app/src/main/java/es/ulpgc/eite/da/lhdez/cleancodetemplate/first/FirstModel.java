@@ -1,11 +1,12 @@
 package es.ulpgc.eite.da.lhdez.cleancodetemplate.first;
 
 /**
- * Created by Luis on March, 2021
+ * Created by Luis on marzo, 2022
  */
 public class FirstModel implements FirstContract.Model {
 
-  public static String TAG = FirstModel.class.getSimpleName();
+  //public static String TAG = FirstModel.class.getSimpleName();
+  public static String TAG = "CleanCodeTemplate.FirstModel";
 
   private String data;
 
@@ -16,21 +17,35 @@ public class FirstModel implements FirstContract.Model {
   @Override
   public String getStoredData() {
     // Log.e(TAG, "getStoredData()");
+
     return data;
   }
 
   @Override
-  public void onRestartScreen(String data) {
-    // Log.e(TAG, "onRestartScreen()");
+  public String getUpdatedData() {
+    // Log.e(TAG, "getUpdatedData()");
+
+    return data;
   }
 
   @Override
-  public void onDataFromNextScreen(String data) {
-    // Log.e(TAG, "onDataFromNextScreen()");
+  public void onUpdatedDataFromRestartedScreen(String data) {
+    // Log.e(TAG, "onUpdatedDataFromRestartedScreen()");
+
+
   }
 
   @Override
-  public void onDataFromPreviousScreen(String data) {
-    // Log.e(TAG, "onDataFromPreviousScreen()");
+  public void onUpdatedDataFromNextScreen(String data) {
+    // Log.e(TAG, "onUpdatedDataFromNextScreen()");
+
+
+  }
+
+  @Override
+  public void onUpdatedDataFromPreviousScreen(String data) {
+    // Log.e(TAG, "onUpdatedDataFromPreviousScreen()");
+
+
   }
 }
