@@ -67,7 +67,6 @@ public class FirstPresenter implements FirstContract.Presenter {
   public void onResume() {
     Log.e(TAG, "onResume()");
 
-
     // call the model and update the state if is necessary
     //state.data = model.getUpdatedData();
 
@@ -84,7 +83,6 @@ public class FirstPresenter implements FirstContract.Presenter {
 
     // update the view
     view.get().onViewModelDataUpdated(state);
-
   }
 
   @Override
@@ -125,7 +123,6 @@ public class FirstPresenter implements FirstContract.Presenter {
   private void setScreenState(FirstState state) {
     mediator.setFirstScreenState(state);
   }
-
 
   private SecondToFirstState getStateFromNextScreen() {
     return mediator.getNextFirstScreenState();

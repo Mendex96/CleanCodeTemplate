@@ -16,10 +16,12 @@ public class SecondPresenter implements SecondContract.Presenter {
   //public static String TAG = SecondPresenter.class.getSimpleName();
   public static String TAG = "CleanCodeTemplate.SecondPresenter";
 
+
   private WeakReference<SecondContract.View> view;
   private SecondState state;
   private SecondContract.Model model;
   private AppMediator mediator;
+
 
   public SecondPresenter(AppMediator mediator) {
     this.mediator = mediator;
@@ -48,6 +50,7 @@ public class SecondPresenter implements SecondContract.Presenter {
       state.data = savedState.data;
     }
   }
+
 
   @Override
   public void onRestart() {
@@ -99,6 +102,7 @@ public class SecondPresenter implements SecondContract.Presenter {
     // update the state
     setScreenState(state);
   }
+
 
   @Override
   public void onDestroy() {
@@ -152,5 +156,4 @@ public class SecondPresenter implements SecondContract.Presenter {
   public void injectModel(SecondContract.Model model) {
     this.model = model;
   }
-
 }

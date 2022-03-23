@@ -14,10 +14,12 @@ import es.ulpgc.eite.da.lhdez.cleancodetemplate.R;
 public class SecondActivity
     extends AppCompatActivity implements SecondContract.View {
 
+
   //public static String TAG = SecondActivity.class.getSimpleName();
   public static String TAG = "CleanCodeTemplate.SecondActivity";
 
   private SecondContract.Presenter presenter;
+
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +40,7 @@ public class SecondActivity
     }
   }
 
+
   @Override
   protected void onResume() {
     super.onResume();
@@ -57,6 +60,7 @@ public class SecondActivity
     presenter.onBackPressed();
   }
 
+
   @Override
   protected void onPause() {
     super.onPause();
@@ -65,6 +69,7 @@ public class SecondActivity
 
     presenter.onPause();
   }
+
 
   @Override
   protected void onDestroy() {
@@ -77,8 +82,10 @@ public class SecondActivity
 
 
   public void onButtonClicked(View view) {
+
     presenter.onButtonClicked();
   }
+
 
   @Override
   public void onViewModelDataUpdated(SecondViewModel viewModel) {

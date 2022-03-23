@@ -16,10 +16,12 @@ import es.ulpgc.eite.da.lhdez.cleancodetemplate.second.SecondActivity;
 public class FirstActivity
     extends AppCompatActivity implements FirstContract.View {
 
+
   //public static String TAG = FirstActivity.class.getSimpleName();
   public static String TAG = "CleanCodeTemplate.FirstActivity";
 
   private FirstContract.Presenter presenter;
+
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +52,7 @@ public class FirstActivity
     presenter.onResume();
   }
 
+
   @Override
   public void onBackPressed() {
     super.onBackPressed();
@@ -78,8 +81,10 @@ public class FirstActivity
   }
 
   public void onButtonClicked(View view) {
+
     presenter.onButtonClicked();
   }
+
 
   @Override
   public void onViewModelDataUpdated(FirstViewModel viewModel) {
@@ -97,6 +102,7 @@ public class FirstActivity
     Intent intent = new Intent(this, SecondActivity.class);
     startActivity(intent);
   }
+
 
   /*
   @Override
